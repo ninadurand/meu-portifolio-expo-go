@@ -2,7 +2,7 @@ import React from 'react'; // Requerido em TSX/JSX
 import { Tabs } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 // Supondo que você criou um arquivo de constantes de cores
-import { colors } from '../constants/Colors'; 
+import { colors } from '@/constants/Colors';
 
 export default function TabLayout() {
   return (
