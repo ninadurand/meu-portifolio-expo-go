@@ -1,5 +1,8 @@
 export const colors = {
-  primary: '#0baa75ff',
-  textSecondary: '#888',
-  background: '#fff',
+  background: '#1e2a38', // Azul marinho fundo
+  card: '#2c3a4c',       // Azul um pouco mais claro para cards
+  text: '#FFD3E9',       // Rosa claro para texto
+  textSecondary: '#ffffff', // Branco
+  primary: '#FFD3E9',    // Rosa destaque
+  icon: '#FFD3E9',
 };

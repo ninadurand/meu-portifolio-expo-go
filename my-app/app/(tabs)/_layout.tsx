@@ -1,18 +1,18 @@
-import React from 'react'; // Requerido em TSX/JSX
+import React from 'react';
 import { Tabs } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
-// Supondo que você criou um arquivo de constantes de cores
 import { colors } from '@/constants/Colors';
 
 export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        headerShown: true,
-        tabBarActiveTintColor: colors.primary || '#0baa75ff', // Usando um fallback
-        tabBarInactiveTintColor: colors.textSecondary || '#888',
+        headerShown: false, // Esconde o cabeçalho padrão
+        tabBarActiveTintColor: colors.primary,
+        tabBarInactiveTintColor: '#888',
         tabBarStyle: {
-          backgroundColor: colors.background || '#fff',
+          backgroundColor: colors.background,
+          borderTopColor: colors.primary,
         },
       }}
     >
@@ -27,23 +27,28 @@ export default function TabLayout() {
         name="about"
         options={{
           title: 'Sobre',
-          tabBarIcon: ({ color }) => <Ionicons name="information-circle" color={color} size={24} />,
+          tabBarIcon: ({ color }) => <Ionicons name="person" color={color} size={24} />,
         }}
       />
       <Tabs.Screen
-        name="academic"
+        name="projects" // Nome do arquivo que criamos acima
         options={{
-          title: 'Acadêmica',
-          tabBarIcon: ({ color }) => <Ionicons name="school" color={color} size={24} />,
+          title: 'Artes',
+          tabBarIcon: ({ color }) => <Ionicons name="images" color={color} size={24} />,
         }}
       />
       <Tabs.Screen
-        name="(exp)/skills"
+        name="game" // Você já tem o arquivo game.tsx, só precisa ajustar as cores nele
         options={{
-          title: 'Habilidades',
-          tabBarIcon: ({ color }) => <Ionicons name="code-slash" color={color} size={24} />,
+          title: 'Forca',
+          tabBarIcon: ({ color }) => <Ionicons name="game-controller" color={color} size={24} />,
         }}
       />
+      
+      {/* Oculte as abas que não quer mostrar, mas mantenha os arquivos se necessário */}
+      <Tabs.Screen name="explore" options={{ href: null }} />
+      <Tabs.Screen name="academic" options={{ href: null }} />
+      <Tabs.Screen name="skills" options={{ href: null }} />
     </Tabs>
   );
 }
